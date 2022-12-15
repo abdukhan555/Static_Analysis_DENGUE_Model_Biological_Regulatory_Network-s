@@ -1,0 +1,30 @@
+\beginnet{defaultName}
+
+\place{U}{\name{U} \init{0} \capacity{2} \coords{50 10}}
+\place{-U}{\name{-U} \init{2} \capacity{2} \coords{100 10}}
+
+\place{V}{\name{V} \init{0} \capacity{1} \coords{50 90}}
+\place{-V}{\name{-V} \init{1} \capacity{1} \coords{100 90}}
+
+\transition{t_U_0+}{\name{t_U_0+} \coords{200 10}}
+\transition{t_U_1-}{\name{t_U_1-} \coords{280 10}}
+\transition{t_V_0-}{\name{t_V_0-} \coords{200 90}}
+\transition{t_V_1+}{\name{t_V_1+} \coords{280 90}}
+\arc{a_t_U_0+_U}{\from{t_U_0+} \to{U} \weight{1} \type{ordinary}}
+\arc{a_-U_t_U_0+}{\from{-U} \to{t_U_0+} \weight{1} \type{ordinary}}
+\arc{a_-V-_t_U_0+}{\from{-V} \to{t_U_0+} \weight{1} \type{ordinary}}
+\arc{a_t_U_0+_-V}{\from{t_U_0+} \to{-V} \weight{1} \type{ordinary}}
+\arc{a_-U_t_U_1-}{\from{-U} \to{t_U_1-} \weight{1} \type{ordinary}}
+\arc{a_t_U_1-_-U}{\from{t_U_1-} \to{-U} \weight{2} \type{ordinary}}
+\arc{a_U_t_U_1-}{\from{U} \to{t_U_1-} \weight{1} \type{ordinary}}
+\arc{a_V_t_U_1-}{\from{V} \to{t_U_1-} \weight{1} \type{ordinary}}
+\arc{a_t_U_1-_V}{\from{t_U_1-} \to{V} \weight{1} \type{ordinary}}
+\arc{a_t_V_0-_-V}{\from{t_V_0-} \to{-V} \weight{1} \type{ordinary}}
+\arc{a_V_t_V_0-}{\from{V} \to{t_V_0-} \weight{1} \type{ordinary}}
+\arc{a_-U_t_V_0-}{\from{-U} \to{t_V_0-} \weight{2} \type{ordinary}}
+\arc{a_t_V_0-_-U}{\from{t_V_0-} \to{-U} \weight{2} \type{ordinary}}
+\arc{a_t_V_1+_V}{\from{t_V_1+} \to{V} \weight{1} \type{ordinary}}
+\arc{a_-V_t_V_1+}{\from{-V} \to{t_V_1+} \weight{1} \type{ordinary}}
+\arc{a_U_t_V_1+}{\from{U} \to{t_V_1+} \weight{1} \type{ordinary}}
+\arc{a_t_V_1+_U}{\from{t_V_1+} \to{U} \weight{1} \type{ordinary}}
+\endnet

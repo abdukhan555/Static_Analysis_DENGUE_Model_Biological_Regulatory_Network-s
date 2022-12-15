@@ -1,0 +1,84 @@
+PEP
+PTNet
+FORMAT_N
+PL
+1"TLR=0"M1
+2"TLR=1"M0
+3"IFNAB=0"M1
+4"IFNAB=1"M0
+5"SOCS=0"M1
+6"SOCS=1"M0
+7"DENV=0"M1
+8"DENV=1"M0
+TR
+1"DENV=0 -> DENV=1 when IFNAB=0"
+2"TLR=0 -> TLR=1 when DENV=1 and SOCS=0"
+3"DENV=1 -> DENV=0 when IFNAB=1"
+4"SOCS=1 -> SOCS=0 when DENV=0"
+5"IFNAB=1 -> IFNAB=0 when TLR=0"
+6"IFNAB=1 -> IFNAB=0 when DENV=1 and SOCS=0 and TLR=1"
+7"IFNAB=0 -> IFNAB=1 when DENV=0 and SOCS=0 and TLR=1"
+8"IFNAB=0 -> IFNAB=1 when SOCS=1 and TLR=1"
+9"SOCS=0 -> SOCS=1 when DENV=1"
+10"TLR=1 -> TLR=0 when DENV=0 and SOCS=0"
+11"TLR=1 -> TLR=0 when SOCS=1"
+TP
+1<3
+1<8
+2<2
+2<5
+2<8
+3<4
+3<7
+4<5
+4<7
+5<1
+5<3
+6<2
+6<3
+6<5
+6<8
+7<2
+7<4
+7<5
+7<7
+8<2
+8<4
+8<6
+9<6
+9<8
+10<1
+10<5
+10<7
+11<1
+11<6
+PT
+1>2
+1>5
+2>6
+2>7
+2>8
+2>10
+2>11
+3>1
+3>7
+3>8
+4>3
+4>5
+4>6
+5>2
+5>6
+5>7
+5>9
+5>10
+6>4
+6>8
+6>11
+7>1
+7>4
+7>7
+7>10
+8>2
+8>3
+8>6
+8>9

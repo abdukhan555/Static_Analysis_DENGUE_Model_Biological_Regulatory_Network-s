@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml>
+  <net id="defaultName" type="P/T net">
+    <place id="U">
+      <graphics>
+        <position x="50" y="10"/>
+      </graphics>
+      <name>
+        <value>U</value>
+      </name>
+      <initialMarking>
+        <value>0</value>
+      </initialMarking>
+    </place>
+    <place id="-U">
+      <graphics>
+        <position x="100" y="10"/>
+      </graphics>
+      <name>
+        <value>-U</value>
+      </name>
+      <initialMarking>
+        <value>2</value>
+      </initialMarking>
+    </place>
+    <place id="V">
+      <graphics>
+        <position x="50" y="90"/>
+      </graphics>
+      <name>
+        <value>V</value>
+      </name>
+      <initialMarking>
+        <value>0</value>
+      </initialMarking>
+    </place>
+    <place id="-V">
+      <graphics>
+        <position x="100" y="90"/>
+      </graphics>
+      <name>
+        <value>-V</value>
+      </name>
+      <initialMarking>
+        <value>1</value>
+      </initialMarking>
+    </place>
+    <transition id="t_U_0+">
+      <graphics>
+        <position x="200" y="10"/>
+      </graphics>
+      <name>
+        <value>t_U_0+</value>
+      </name>
+      <orientation>
+        <value>0</value>
+      </orientation>
+      <rate>
+        <value>1.0</value>
+      </rate>
+      <timed>
+        <value>false</value>
+      </timed>
+    </transition>
+    <transition id="t_U_1-">
+      <graphics>
+        <position x="280" y="10"/>
+      </graphics>
+      <name>
+        <value>t_U_1-</value>
+      </name>
+      <orientation>
+        <value>0</value>
+      </orientation>
+      <rate>
+        <value>1.0</value>
+      </rate>
+      <timed>
+        <value>false</value>
+      </timed>
+    </transition>
+    <transition id="t_V_0-">
+      <graphics>
+        <position x="200" y="90"/>
+      </graphics>
+      <name>
+        <value>t_V_0-</value>
+      </name>
+      <orientation>
+        <value>0</value>
+      </orientation>
+      <rate>
+        <value>1.0</value>
+      </rate>
+      <timed>
+        <value>false</value>
+      </timed>
+    </transition>
+    <transition id="t_V_1+">
+      <graphics>
+        <position x="280" y="90"/>
+      </graphics>
+      <name>
+        <value>t_V_1+</value>
+      </name>
+      <orientation>
+        <value>0</value>
+      </orientation>
+      <rate>
+        <value>1.0</value>
+      </rate>
+      <timed>
+        <value>false</value>
+      </timed>
+    </transition>
+    <arc id="a_t_U_0+_-U" source="t_U_0+" target="U">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_-U_-t_U_0+" source="-U" target="t_U_0+">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_-V_-t_U_0+" source="-V" target="t_U_0+">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_t_U_0+_--V" source="t_U_0+" target="-V">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_-U_-t_U_1-" source="-U" target="t_U_1-">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_t_U_1-_--U" source="t_U_1-" target="-U">
+      <inscription>
+        <value>2</value>
+      </inscription>
+    </arc>
+    <arc id="a_U_-t_U_1-" source="U" target="t_U_1-">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_V_-t_U_1-" source="V" target="t_U_1-">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_t_U_1-_-V" source="t_U_1-" target="V">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_t_V_0-_--V" source="t_V_0-" target="-V">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_V_-t_V_0-" source="V" target="t_V_0-">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_-U_-t_V_0-" source="-U" target="t_V_0-">
+      <inscription>
+        <value>2</value>
+      </inscription>
+    </arc>
+    <arc id="a_t_V_0-_--U" source="t_V_0-" target="-U">
+      <inscription>
+        <value>2</value>
+      </inscription>
+    </arc>
+    <arc id="a_t_V_1+_-V" source="t_V_1+" target="V">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_-V_-t_V_1+" source="-V" target="t_V_1+">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_U_-t_V_1+" source="U" target="t_V_1+">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+    <arc id="a_t_V_1+_-U" source="t_V_1+" target="U">
+      <inscription>
+        <value>1</value>
+      </inscription>
+    </arc>
+  </net>
+</pnml>
